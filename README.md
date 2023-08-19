@@ -5,3 +5,7 @@
 It can be used to capture photos and videos to be immediately sent to the device's photo library, or you can subscribe to provided `@Published` properties to get the captures as they happen.
 
 There is still more work to be done to provide more granular control, but it's already functional as it is.
+
+# Credit
+
+Most of the behind-scenes-code stems directly from Apple's [AVCam tutorial](https://developer.apple.com/documentation/avfoundation/capture_setup/avcam_building_a_camera_app). I started with the current version of it (parts of which require iOS 17/Xcode 15), and I made it backwards-compatible to iOS 13. I also reworked parts of the code to work with properties of `AVCaptureViewModel`, as well as to replace `@IBAction`s and `@IBOutlets`. Additionally, I turned their `PreviewView` into `CameraPreviewView` and wrapped it with `CameraPreview`.
