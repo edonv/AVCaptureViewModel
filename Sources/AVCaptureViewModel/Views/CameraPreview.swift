@@ -48,14 +48,4 @@ extension CameraPreview {
         guard let videoPreviewRect else { return nil }
         return Path(videoPreviewRect)
     }
-    
-//    @ViewBuilder
-//    public func limitGesturesToPreviewArea() -> some View {
-//        if let videoPreviewPath {
-//            self
-//                .contentShape(videoPreviewPath)
-//        } else {
-//            self
-//        }
-//    }
 }
