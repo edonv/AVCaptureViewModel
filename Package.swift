@@ -25,7 +25,7 @@ let package = Package(
             name: "AVCaptureViewModel",
             dependencies: []),
         .testTarget(
-            name: "CameraViewModelTests",
+            name: "AVCaptureViewModelTests",
             dependencies: ["AVCaptureViewModel"]),
     ]
 )
