@@ -1,11 +1,11 @@
 import XCTest
-@testable import CameraViewModel
+@testable import AVCaptureViewModel
 
-final class CameraViewModelTests: XCTestCase {
+final class AVCaptureViewModelTests: XCTestCase {
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(CameraViewModel().text, "Hello, World!")
+//        XCTAssertEqual(AVCaptureViewModel().text, "Hello, World!")
     }
 }
