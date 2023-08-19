@@ -25,7 +25,6 @@ public struct CameraPreview: UIViewRepresentable {
     public func makeUIView(context: Context) -> CameraPreviewView {
         let view = CameraPreviewView(frame: .zero)
         videoPreviewLayer = view.videoPreviewLayer
-//        view.videoPreviewLayer.needsDisplayOnBoundsChange = true
         view.session = session
         return view
     }
