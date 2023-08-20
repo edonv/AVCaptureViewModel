@@ -524,13 +524,6 @@ public class AVCaptureViewModel: NSObject, ObservableObject {
     /// This can be used to disable camera buttons, as input cannot be captured while in this state.
     @Published public var currentlyChangingCameras = false
     
-    // TODO: what to do with this
-    var _supportedInterfaceOrientations: UIInterfaceOrientationMask = .all
-    var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        get { return _supportedInterfaceOrientations }
-        set { _supportedInterfaceOrientations = newValue }
-    }
-    
     // MARK: Shared w/ Photos/Movies
     
     internal func uniqueTemporaryDirectoryFileURL() -> URL {

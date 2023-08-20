@@ -31,17 +31,6 @@ extension AVCaptureViewModel: AVCaptureFileOutputRecordingDelegate {
 //        captureModeControl.isEnabled = false
         
         // This disables device rotation while video is being captured.
-        if let scene = UIApplication.shared.connectedScenes.first,
-           let windowScene = scene as? UIWindowScene {
-            switch windowScene.interfaceOrientation {
-            case .portrait: self.supportedInterfaceOrientations = .portrait
-            case .landscapeLeft: self.supportedInterfaceOrientations = .landscapeLeft
-            case .landscapeRight: self.supportedInterfaceOrientations = .landscapeRight
-            case .portraitUpsideDown: self.supportedInterfaceOrientations = .portraitUpsideDown
-            case .unknown: self.supportedInterfaceOrientations = .portrait
-            default: self.supportedInterfaceOrientations = .portrait
-            }
-        }
         
         // This is to force update changes to orientation (from switch above)
         // Might not actually use this
@@ -184,7 +173,6 @@ extension AVCaptureViewModel: AVCaptureFileOutputRecordingDelegate {
 //            self.recordButton.isEnabled = true
 //            self.captureModeControl.isEnabled = true
 //            self.recordButton.setImage(#imageLiteral(resourceName: "CaptureVideo"), for: [])
-            self.supportedInterfaceOrientations = UIInterfaceOrientationMask.all
             
             // After the recording finishes, allow rotation to continue.
             // This is to flip orientation sideways
