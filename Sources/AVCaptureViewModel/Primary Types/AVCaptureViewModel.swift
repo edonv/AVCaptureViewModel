@@ -43,7 +43,9 @@ public class AVCaptureViewModel: NSObject, ObservableObject {
     public var videoPreviewLayer: AVCaptureVideoPreviewLayer! {
         didSet {
             guard videoPreviewLayer != nil else { return }
-            addKVOObservers()
+            sessionQueue.async { [weak self] in
+                self?.addKVOObservers()
+            }
         }
     }
 
