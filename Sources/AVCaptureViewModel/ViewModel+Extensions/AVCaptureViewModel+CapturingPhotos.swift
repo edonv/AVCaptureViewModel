@@ -177,7 +177,9 @@ extension AVCaptureViewModel {
         if newValue {
             do {
                 try self.videoDeviceInput.device.lockForConfiguration()
-                self.videoDeviceInput.device.activeFormat = self.selectedMovieMode10BitDeviceFormat!
+                if let selectedMovieMode10BitDeviceFormat {
+                    self.videoDeviceInput.device.activeFormat = selectedMovieMode10BitDeviceFormat
+                }
                 self.videoDeviceInput.device.unlockForConfiguration()
             } catch {
                 print("Could not lock device for configuration: \(error)")
