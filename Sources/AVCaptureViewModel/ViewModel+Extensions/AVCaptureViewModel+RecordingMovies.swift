@@ -67,7 +67,7 @@ extension AVCaptureViewModel: AVCaptureFileOutputRecordingDelegate {
 //                    let videoRotationAngle = self.videoDeviceRotationCoordinator.videoRotationAngleForHorizonLevelCapture
 //
 //                    movieFileOutputConnection?.videoRotationAngle = videoRotationAngle
-                }
+//                }
                 
                 // TODO: if making this a package, make sure to make this an option
                 // Sets output settings to .hevc if device supports. We need to keep it with jpeg
