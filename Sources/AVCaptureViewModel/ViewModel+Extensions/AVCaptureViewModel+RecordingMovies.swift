@@ -53,7 +53,7 @@ extension AVCaptureViewModel: AVCaptureFileOutputRecordingDelegate {
 //
 //        }
         
-        sessionQueue.async {
+        sessionQueue.async { [captureOrientation] in
             if !movieFileOutput.isRecording {
                 if UIDevice.current.isMultitaskingSupported {
                     self.backgroundRecordingID = UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
@@ -65,16 +65,13 @@ extension AVCaptureViewModel: AVCaptureFileOutputRecordingDelegate {
                 // connection before recording.
                 if let movieFileOutputConnection {
                     if #available(iOS 17.0, *) {
+                        // TODO: when iOS 17 is available, confirm if this returns the correct value, even if the the app isn't allowed to rotate
+                        // i.e. `videoOrientation` (pre-17) returns `portrait` if the app isn't allowed to rotate even if in landscape
 //                        let videoRotationAngle = self.videoDeviceRotationCoordinator.videoRotationAngleForHorizonLevelCapture
-//
+                        // TODO: add use of isVideoRotationAngleSupported(videoRotationAngle) on photoOutputConnection
 //                        movieFileOutputConnection?.videoRotationAngle = videoRotationAngle
-                    } else if movieFileOutputConnection.isVideoOrientationSupported,
-                              let videoOrientation = self.videoPreviewLayer.connection?.videoOrientation {
-                        // https://developer.apple.com/documentation/avfoundation/capture_setup/setting_up_a_capture_session
-                        // the link might say to do something else, but for now trying to mimic logic from iOS 17 code
-//                        let videoOrientation = self.videoDeviceRotationCoordinator.videoRotationAngleForHorizonLevelCapture
-                        
-                        movieFileOutputConnection.videoOrientation = videoOrientation
+                    } else if movieFileOutputConnection.isVideoOrientationSupported {
+                        movieFileOutputConnection.videoOrientation = captureOrientation
                     }
                     
                     // TODO: if making this a package, make sure to make this an option

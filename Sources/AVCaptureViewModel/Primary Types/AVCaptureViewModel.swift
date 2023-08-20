@@ -412,6 +412,22 @@ public class AVCaptureViewModel: NSObject, ObservableObject {
 //    internal var videoDeviceRotationCoordinator: AVCaptureDevice.RotationCoordinator!
     
     @Published public var currentDeviceOrientation: UIDeviceOrientation = .unknown
+    internal var captureOrientation: AVCaptureVideoOrientation {
+        switch currentDeviceOrientation {
+        case .portrait:
+            return .portrait
+        case .portraitUpsideDown:
+            return .portraitUpsideDown
+        case .landscapeLeft:
+            // This value is meant to be backwards
+            return .landscapeRight
+        case .landscapeRight:
+            // This value is meant to be backwards
+            return .landscapeLeft
+        default:
+            return .portrait
+        }
+    }
     
     // MARK: Readiness Coordinator
     // no stored properties
