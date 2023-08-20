@@ -107,6 +107,8 @@ public class AVCaptureViewModel: NSObject, ObservableObject {
             .store(in: &observers)
         
         $currentCaptureMode
+            // Dropping first value so this isn't called on launch.
+            .dropFirst()
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: captureModeHasChanged(_:))
             .store(in: &observers)
@@ -124,6 +126,8 @@ public class AVCaptureViewModel: NSObject, ObservableObject {
         .store(in: &observers)
         
         $isHDRVideoCaptureOn
+            // Dropping first value so this isn't called on launch.
+            .dropFirst()
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: hdrVideoModeHasChanged(_:))
             .store(in: &observers)
