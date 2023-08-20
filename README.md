@@ -17,6 +17,9 @@ There is still more work to be done to provide more granular control, but it's a
 - [ ] Fix existing issues with screen rotation
 - [ ] Implement @MainActor on `AVCaptureViewModel` and implement removal of `DispatchQueue.main.async { }`
 
+## Misc Notes
+- The framework doesn't currently support a built-in way to keep the screen from rotating while recording a video, as this isn't possible the way it's written. So if your app allows for multiple orientations, you'll have to listen for event changes (specifically `.movieRecordingStarted` and `.movieRecordingFinished`) and figure it out on your own. In UIKit, this is done by setting or overriding a `UIViewController`'s [`supportedInterfaceOrientations`](https://developer.apple.com/documentation/uikit/uiviewcontroller/1621435-supportedinterfaceorientations) property.
+
 ## Credit
 
 Most of the behind-scenes-code stems directly from Apple's [AVCam tutorial](https://developer.apple.com/documentation/avfoundation/capture_setup/avcam_building_a_camera_app). I started with the current version of it (parts of which require iOS 17/Xcode 15), and I made it backwards-compatible to iOS 13. I also reworked parts of the code to work with properties of `AVCaptureViewModel`, as well as to replace `@IBAction`s and `@IBOutlets`. Additionally, I turned their `PreviewView` into `CameraPreviewView` and wrapped it with `CameraPreview`.
