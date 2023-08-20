@@ -37,7 +37,7 @@ extension AVCaptureViewModel {
                 let frontVideoDeviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInTrueDepthCamera, .builtInWideAngleCamera],
                                                                                         mediaType: .video, position: .front)
                 
-                var externalVideoDeviceDiscoverySession: AVCaptureDevice.DiscoverySession? = nil
+                let externalVideoDeviceDiscoverySession: AVCaptureDevice.DiscoverySession? = nil
 //                if #available(iOS 17, *) {
 //                    externalVideoDeviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.external],
 //                                                                                           mediaType: .video,
