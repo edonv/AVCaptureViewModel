@@ -319,13 +319,14 @@ public class AVCaptureViewModel: NSObject, ObservableObject {
         
         // Add an audio input device.
         do {
-            let audioDevice = AVCaptureDevice.default(for: .audio)
-            let audioDeviceInput = try AVCaptureDeviceInput(device: audioDevice!)
-            
-            if session.canAddInput(audioDeviceInput) {
-                session.addInput(audioDeviceInput)
-            } else {
-                print("Could not add audio device input to the session")
+            if let audioDevice = AVCaptureDevice.default(for: .audio) {
+                let audioDeviceInput = try AVCaptureDeviceInput(device: audioDevice)
+                
+                if session.canAddInput(audioDeviceInput) {
+                    session.addInput(audioDeviceInput)
+                } else {
+                    print("Could not add audio device input to the session")
+                }
             }
         } catch {
             print("Could not create audio device input: \(error)")
