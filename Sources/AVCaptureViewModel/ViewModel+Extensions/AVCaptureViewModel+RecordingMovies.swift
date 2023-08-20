@@ -59,22 +59,22 @@ extension AVCaptureViewModel: AVCaptureFileOutputRecordingDelegate {
                     self.backgroundRecordingID = UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
                 }
                 
+                let movieFileOutputConnection = movieFileOutput.connection(with: .video)
+                
                 // Update the orientation on the movie file output video
                 // connection before recording.
 //                if #available(iOS 17.0, *) {
 //                    let videoRotationAngle = self.videoDeviceRotationCoordinator.videoRotationAngleForHorizonLevelCapture
 //
-//                    let movieFileOutputConnection = movieFileOutput.connection(with: .video)
 //                    movieFileOutputConnection?.videoRotationAngle = videoRotationAngle
-//
-//                    let availableVideoCodecTypes = movieFileOutput.availableVideoCodecTypes
-//
-//                    // TODO: if making this a package, make sure to make this an option
-//                    // Sets output settings to .hevc if device supports. We need to keep it with jpeg
-//                    if availableVideoCodecTypes.contains(.hevc) {
-//                        movieFileOutput.setOutputSettings([AVVideoCodecKey: AVVideoCodecType.hevc], for: movieFileOutputConnection!)
-//                    }
-//                }
+                }
+                
+                // TODO: if making this a package, make sure to make this an option
+                // Sets output settings to .hevc if device supports. We need to keep it with jpeg
+                let availableVideoCodecTypes = movieFileOutput.availableVideoCodecTypes
+                if availableVideoCodecTypes.contains(.hevc) {
+                    movieFileOutput.setOutputSettings([AVVideoCodecKey: AVVideoCodecType.hevc], for: movieFileOutputConnection!)
+                }
                 
                 // Start recording video to a temporary file.
                 movieFileOutput.startRecording(to: self.uniqueTemporaryDirectoryFileURL(), recordingDelegate: self)
