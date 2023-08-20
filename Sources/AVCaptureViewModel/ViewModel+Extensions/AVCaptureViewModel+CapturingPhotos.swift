@@ -90,6 +90,7 @@ extension AVCaptureViewModel {
     internal func setUpPhotoSettings() -> AVCapturePhotoSettings {
         var photoSettings = AVCapturePhotoSettings()
         
+        #warning("add code to allow customization of which video format to capture")
         // TODO: maybe test with changing device's Camera setting of preferred format (add to Settings?)
         
         // Capture HEIF photos when supported.

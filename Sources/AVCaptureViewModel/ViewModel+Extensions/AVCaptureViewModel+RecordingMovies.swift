@@ -86,6 +86,8 @@ extension AVCaptureViewModel: AVCaptureFileOutputRecordingDelegate {
     
     // MARK: - AVCaptureFileOutputRecordingDelegate
     
+    #warning("Make this an event")
+    
     /// - Tag: DidStartRecording
     public func fileOutput(_ output: AVCaptureFileOutput, didStartRecordingTo fileURL: URL, from connections: [AVCaptureConnection]) {
         capturedMovieURLs.insert(fileURL)
@@ -97,6 +99,8 @@ extension AVCaptureViewModel: AVCaptureFileOutputRecordingDelegate {
 //        }
     }
     
+    #warning("Make this an event")
+
     /// - Tag: DidFinishRecording
     public func fileOutput(_ output: AVCaptureFileOutput,
                            didFinishRecordingTo outputFileURL: URL,
@@ -167,6 +171,7 @@ extension AVCaptureViewModel: AVCaptureFileOutputRecordingDelegate {
         // and start another recording.
         
         DispatchQueue.main.async {
+            #warning("push an event")
             // Only enable the ability to change camera if the device has more
             // than one camera.
 //            self.cameraButton.isEnabled = self.videoDeviceDiscoverySession.uniqueDevicePositionsCount > 1

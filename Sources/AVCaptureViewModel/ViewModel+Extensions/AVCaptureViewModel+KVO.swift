@@ -119,6 +119,7 @@ extension AVCaptureViewModel {
                 self.session.startRunning()
                 self.isSessionRunning = self.session.isRunning
             } else {
+                #warning("send state sessionRuntimeError here")
 //                DispatchQueue.main.async {
 //                    self.resumeButton.isHidden = false
 //                }
@@ -155,6 +156,7 @@ extension AVCaptureViewModel {
             } else if reason == .videoDeviceNotAvailableDueToSystemPressure {
                 print("Session stopped running due to shutdown system pressure level.")
             }
+            #warning("send state sessionWasInterrupted here, resumable == showResumeButton")
             if showResumeButton {
                 // Fade-in a button to enable the user to try to resume the
                 // session running.
