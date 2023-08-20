@@ -35,7 +35,7 @@ extension AVCaptureViewModel {
         
         /// The callback for when ``AVCaptureViewModel/AVCaptureViewModel/capturePhoto()`` is called.
         ///
-        /// This can be overritten to do custom animations, or made empty to eliminate a flash animation altogether.
+        /// This can be overridden to do custom animations, or made empty to eliminate a flash animation altogether.
         ///
         /// The default animation is:
         /// ```swift
