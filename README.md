@@ -1,5 +1,8 @@
 # AVCaptureViewModel
 
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fedonv%2FAVCaptureViewModel%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/edonv/AVCaptureViewModel)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fedonv%2FAVCaptureViewModel%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/edonv/AVCaptureViewModel)
+
 `AVCaptureViewModel` is an `ObservableObject` with exposed `@Published` properties to be used with the provided ``CameraPreview`` (SwiftUI) or ``CameraPreviewView`` (UIKit). It allows you to build a custom interface around them as part of a larger `View` or `UIViewController` (respectively) for capturing photos and videos.
 
 It can be used to capture photos and videos to be immediately sent to the device's photo library, or you can subscribe to provided `@Published` properties to get the captures as they happen.
@@ -8,7 +11,7 @@ It can be used to capture photos and videos to be immediately sent to the device
 
 There is still more work to be done to provide more granular control, but it's already functional as it is.
 
-Things to add:
+### Things to add:
 - [ ] Some kind of subscribable publisher (likely a `CurrentValueSubject`) for publishing events (such as photo capture starting/ending, etc)
 - [ ] Exposing more properties for customizability
 - [ ] Fix existing issues with screen rotation
