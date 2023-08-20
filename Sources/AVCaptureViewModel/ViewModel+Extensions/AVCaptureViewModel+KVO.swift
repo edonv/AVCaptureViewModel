@@ -170,6 +170,7 @@ extension AVCaptureViewModel {
     }
     
     internal func sessionInterruptionEnded(notification: Notification) {
+        #warning("send state sessionInterruptionEnded")
         print("Capture session interruption ended")
         
 //        if !resumeButton.isHidden {
