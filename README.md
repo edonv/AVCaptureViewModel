@@ -11,7 +11,7 @@ It can be used to capture photos and videos to be immediately sent to the device
 
 There is still more work to be done to provide more granular control, but it's already functional as it is.
 
-Things to add:
+### Things to add:
 - [ ] Some kind of subscribable publisher (likely a `CurrentValueSubject`) for publishing events (such as photo capture starting/ending, etc)
 - [ ] Exposing more properties for customizability
 - [ ] Fix existing issues with screen rotation
