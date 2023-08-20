@@ -54,7 +54,7 @@ extension AVCaptureViewModel {
                                                               willCapturePhotoAnimation: {
                 // Flash the screen to signal that a photo was captured.
                 DispatchQueue.main.async {
-                    self.photoCaptureFlashCallback(self.videoPreviewLayer)
+                    self.photoCaptureScreenFlashCallback(self.videoPreviewLayer)
                 }
             }, livePhotoCaptureHandler: { capturing in
                 DispatchQueue.main.async {

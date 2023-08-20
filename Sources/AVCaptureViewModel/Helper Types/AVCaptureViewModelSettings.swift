@@ -35,7 +35,7 @@ extension AVCaptureViewModel {
         
         /// The callback for when ``AVCaptureViewModel/AVCaptureViewModel/capturePhoto()`` is called.
         ///
-        /// This can be overridden to do custom animations, or made empty to eliminate a flash animation altogether.
+        /// This can be overridden to do custom animations, or made empty to eliminate a screen flash animation altogether.
         ///
         /// The default animation is:
         /// ```swift
@@ -48,7 +48,7 @@ extension AVCaptureViewModel {
         /// ```
         ///
         /// - Note: This callback is called on the main thread.
-        public var photoCaptureFlashCallback: (_ videoPreviewLayer: AVCaptureVideoPreviewLayer) -> Void = { videoPreviewLayer in
+        public var photoCaptureScreenFlashCallback: (_ videoPreviewLayer: AVCaptureVideoPreviewLayer) -> Void = { videoPreviewLayer in
             videoPreviewLayer.opacity = 0
             UIView.animate(withDuration: 0.25) {
                 videoPreviewLayer.opacity = 1
@@ -71,12 +71,12 @@ extension AVCaptureViewModel {
         settings.shouldCleanUpMoviesAutomatically
     }
     
-    /// Convenience getter/setter for ``settings``'s ``Settings/photoCaptureFlashCallback``.
-    internal var photoCaptureFlashCallback: (_ videoPreviewLayer: AVCaptureVideoPreviewLayer) -> Void {
+    /// Convenience getter/setter for ``settings``'s ``Settings/photoCaptureScreenFlashCallback``.
+    internal var photoCaptureScreenFlashCallback: (_ videoPreviewLayer: AVCaptureVideoPreviewLayer) -> Void {
         get {
-            settings.photoCaptureFlashCallback
+            settings.photoCaptureScreenFlashCallback
         } set {
-            settings.photoCaptureFlashCallback = newValue
+            settings.photoCaptureScreenFlashCallback = newValue
         }
     }
 }
