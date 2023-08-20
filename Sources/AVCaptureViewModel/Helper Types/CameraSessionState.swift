@@ -26,11 +26,13 @@ enum CameraSessionState {
     case cameraFinishedChanging
     
     case capturedPhoto(livePhoto: Bool)
+    case photoSavedToLibrary
     case livePhotosCaptureFinished
     
     case movieRecordingTriggered
     case movieRecordingStarted
     case movieRecordingFinished
+    case movieSavedToLibrary
     
     case sessionRunningStateChanged(to: Bool)
 }
