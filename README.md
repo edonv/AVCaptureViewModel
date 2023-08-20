@@ -4,11 +4,14 @@
 
 It can be used to capture photos and videos to be immediately sent to the device's photo library, or you can subscribe to provided `@Published` properties to get the captures as they happen.
 
-## Next Steps
+## Future and Next Steps
 
 There is still more work to be done to provide more granular control, but it's already functional as it is.
 
-I plan to add a subscribable `CurrentValueSubject` for publishing events (such as photo capture starting/ending, etc), as well as exposing more properties. 
+Things to add:
+- [ ] Some kind of subscribable publisher (likely a `CurrentValueSubject`) for publishing events (such as photo capture starting/ending, etc)
+- [ ] Exposing more properties for customizability
+- [ ] Fix existing issues with screen rotation
 
 ## Credit
 
