@@ -29,7 +29,7 @@ extension AVCaptureViewModel {
             photoSettings.livePhotoMovieFileURL = uniqueTemporaryDirectoryFileURL()
         }
         
-        #warning("What to do with this for pre-17?")
+        #warning("What to do with this for pre-17? as in, what does it do in 17?")
         // Start tracking capture readiness on the main thread to synchronously
         // update the shutter button's availability.
 //        if #available(iOS 17.0, *) {
