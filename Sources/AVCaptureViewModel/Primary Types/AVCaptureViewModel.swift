@@ -140,6 +140,27 @@ public class AVCaptureViewModel: NSObject, ObservableObject {
                 }
                 .store(in: &observers)
         }
+        
+        // Observing changes to device orientation
+        UIDevice.current.beginGeneratingDeviceOrientationNotifications()
+        let orientationChanges = NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)
+            .handleEvents(receiveCancel: {
+                UIDevice.current.endGeneratingDeviceOrientationNotifications()
+            })
+            .compactMap { $0.object as? UIDevice }
+            .map(\.orientation)
+            .receive(on: DispatchQueue.main)
+        
+        if #available(iOS 14, *) {
+            orientationChanges
+                .assign(to: &$currentDeviceOrientation)
+        } else {
+            orientationChanges
+                .sink { [weak self] newValue in
+                    self?.currentDeviceOrientation = newValue
+                }
+                .store(in: &observers)
+        }
     }
     
     #warning("maybe remove this?")
@@ -389,6 +410,8 @@ public class AVCaptureViewModel: NSObject, ObservableObject {
     
 //    @available(iOS 17.0, *)
 //    internal var videoDeviceRotationCoordinator: AVCaptureDevice.RotationCoordinator!
+    
+    @Published public var currentDeviceOrientation: UIDeviceOrientation = .unknown
     
     // MARK: Readiness Coordinator
     // no stored properties
