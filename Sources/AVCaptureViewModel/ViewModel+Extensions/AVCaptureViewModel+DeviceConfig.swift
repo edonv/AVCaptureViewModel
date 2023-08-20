@@ -18,7 +18,9 @@ extension AVCaptureViewModel {
         self.currentlyChangingCameras = true
         self.selectedMovieMode10BitDeviceFormat = nil
         self.changeCamera(nil, isUserSelection: true) { [weak self] in
-            self?.currentlyChangingCameras = false
+            DispatchQueue.main.async {
+                self?.currentlyChangingCameras = false
+            }
         }
     }
     
