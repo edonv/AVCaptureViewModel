@@ -54,6 +54,8 @@ extension AVCaptureViewModel {
                 videoPreviewLayer.opacity = 1
             }
         }
+        
+        #warning("selfie camera is mirrored (use AVCaptureConnection.isVideoMirrored)")
     }
     
     /// Convenience getter for ``settings``'s ``Settings/tagLocationInCaptures``.
