@@ -63,11 +63,17 @@ extension AVCaptureViewModel: AVCaptureFileOutputRecordingDelegate {
                 
                 // Update the orientation on the movie file output video
                 // connection before recording.
-//                if #available(iOS 17.0, *) {
+                if #available(iOS 17.0, *) {
 //                    let videoRotationAngle = self.videoDeviceRotationCoordinator.videoRotationAngleForHorizonLevelCapture
 //
 //                    movieFileOutputConnection?.videoRotationAngle = videoRotationAngle
-//                }
+                } else if let videoOrientation = self.videoPreviewLayer.connection?.videoOrientation {
+                    // https://developer.apple.com/documentation/avfoundation/capture_setup/setting_up_a_capture_session
+                    // the link might say to do something else, but for now trying to mimic logic from iOS 17 code
+//                    let videoOrientation = self.videoDeviceRotationCoordinator.videoRotationAngleForHorizonLevelCapture
+                    
+                    movieFileOutputConnection?.videoOrientation = videoOrientation
+                }
                 
                 // TODO: if making this a package, make sure to make this an option
                 // Sets output settings to .hevc if device supports. We need to keep it with jpeg
