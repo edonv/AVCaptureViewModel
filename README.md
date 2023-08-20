@@ -15,6 +15,7 @@ There is still more work to be done to provide more granular control, but it's a
 - [ ] Some kind of subscribable publisher (likely a `CurrentValueSubject`) for publishing events (such as photo capture starting/ending, etc)
 - [ ] Exposing more properties for customizability
 - [ ] Fix existing issues with screen rotation
+- [ ] Implement @MainActor on `AVCaptureViewModel` and implement removal of `DispatchQueue.main.async { }`
 
 ## Credit
 
