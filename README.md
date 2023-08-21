@@ -19,6 +19,10 @@ There is still more work to be done to provide more granular control, but it's a
 - [ ] Figure out how to automatically resize `CameraPreviewView` to fit the size of the preview (i.e. when it's in photo mode, it doesn't fill the space)
 - [ ] Add a function for pinch gesture/zoom
 
+## How to Use `AVCaptureViewModel`
+
+*COMING SOON*
+
 ## Misc Notes
 - The framework doesn't currently support a built-in way to keep the screen from rotating while recording a video, as this isn't possible the way it's written. So if your app allows for multiple orientations, you'll have to listen for event changes (specifically `.movieRecordingStarted` and `.movieRecordingFinished`) and figure it out on your own. In UIKit, this is done by setting or overriding a `UIViewController`'s [`supportedInterfaceOrientations`](https://developer.apple.com/documentation/uikit/uiviewcontroller/1621435-supportedinterfaceorientations) property. There isn't currently a way to limit app rotations per view in SwiftUI. 
 
