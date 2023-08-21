@@ -17,7 +17,7 @@ There is still more work to be done to provide more granular control, but it's a
 - [ ] Fix existing issues with screen rotation
 - [ ] Implement @MainActor on `AVCaptureViewModel` and implement removal of `DispatchQueue.main.async { }`
 - [ ] Figure out how to automatically resize `CameraPreviewView` to fit the size of the preview (i.e. when it's in photo mode, it doesn't fill the space)
-- [ ] Add a function for pinch gesture/zoom
+- [x] Add a function for pinch gesture/zoom
 
 ## How to Use `AVCaptureViewModel`
 
