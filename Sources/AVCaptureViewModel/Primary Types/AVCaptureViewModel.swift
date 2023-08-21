@@ -169,7 +169,7 @@ public class AVCaptureViewModel: NSObject, ObservableObject {
         }
     }
     
-    #warning("maybe remove this?")
+    // TODO: maybe remove this?
     /// Call this function once you're ready to start showing the camera preview.
     public func requestPermissions() {
         // Request location authorization so photos and videos can be tagged
@@ -444,7 +444,7 @@ public class AVCaptureViewModel: NSObject, ObservableObject {
     
     // MARK: Capturing Photos
     
-    #warning("TODO: Test if this works even with rapid fire image capture.")
+    // TODO: Test if this works even with rapid fire image capture.
     
     /// Image data of the latest photo captured.
     ///
@@ -483,7 +483,7 @@ public class AVCaptureViewModel: NSObject, ObservableObject {
     /// For more info, see [`AVCapturePhotoSettings.photoQualityPrioritization`](https://developer.apple.com/documentation/avfoundation/avcapturephotosettings/3183000-photoqualityprioritization).
     @Published public var photoQualityPrioritizationMode: AVCapturePhotoOutput.QualityPrioritization = .balanced
     
-    #warning("add Published properties for state/processingPhoto (or isCapturingPhoto) and isCapturingVideo or events (maybe via a subject)")
+    // TODO: add Published properties for state/processingPhoto (or isCapturingPhoto) and isCapturingVideo or events (maybe via a subject)
     
     internal var selectedMovieMode10BitDeviceFormat: AVCaptureDevice.Format?
     
@@ -499,7 +499,7 @@ public class AVCaptureViewModel: NSObject, ObservableObject {
     /// This is used internally to keep track of how many Live Photos are actively being captured and to to set ``currentlyCapturingLivePhotos``.
     @Published internal var inProgressLivePhotoCapturesCount = 0
     
-    #warning("after adding State, does this still need to exist?")
+    // TODO: after adding State, does this still need to exist?
     /// If there is a Live Photo actively being captured. There can be real-time overlap.
     @Published public var currentlyCapturingLivePhotos = false
     

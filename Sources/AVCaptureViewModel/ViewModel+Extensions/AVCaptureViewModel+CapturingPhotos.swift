@@ -29,7 +29,7 @@ extension AVCaptureViewModel {
             photoSettings.livePhotoMovieFileURL = uniqueTemporaryDirectoryFileURL()
         }
         
-        #warning("What to do with this for pre-17? as in, what does it do in 17?")
+        // TODO: What to do with this for pre-17? as in, what does it do in 17?
         // Start tracking capture readiness on the main thread to synchronously
         // update the shutter button's availability.
 //        if #available(iOS 17.0, *) {
@@ -97,7 +97,7 @@ extension AVCaptureViewModel {
     internal func setUpPhotoSettings() -> AVCapturePhotoSettings {
         var photoSettings = AVCapturePhotoSettings()
         
-        #warning("add code to allow customization of which video format to capture")
+        // TODO: add code to allow customization of which video format to capture
         // TODO: maybe test with changing device's Camera setting of preferred format (add to Settings?)
         
         // Capture HEIF photos when supported.

@@ -55,7 +55,7 @@ extension AVCaptureViewModel {
             }
         }
         
-        #warning("selfie camera is mirrored (use AVCaptureConnection.isVideoMirrored)")
+        // TODO: selfie camera is mirrored (use AVCaptureConnection.isVideoMirrored)
     }
     
     /// Convenience getter for ``settings``'s ``Settings/tagLocationInCaptures``.
