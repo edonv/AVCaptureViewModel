@@ -16,6 +16,8 @@ There is still more work to be done to provide more granular control, but it's a
 - [ ] Exposing more properties for customizability
 - [ ] Fix existing issues with screen rotation
 - [ ] Implement @MainActor on `AVCaptureViewModel` and implement removal of `DispatchQueue.main.async { }`
+- [ ] Figure out how to automatically resize `CameraPreviewView` to fit the size of the preview (i.e. when it's in photo mode, it doesn't fill the space)
+- [ ] Add a function for pinch gesture/zoom
 
 ## Misc Notes
 - The framework doesn't currently support a built-in way to keep the screen from rotating while recording a video, as this isn't possible the way it's written. So if your app allows for multiple orientations, you'll have to listen for event changes (specifically `.movieRecordingStarted` and `.movieRecordingFinished`) and figure it out on your own. In UIKit, this is done by setting or overriding a `UIViewController`'s [`supportedInterfaceOrientations`](https://developer.apple.com/documentation/uikit/uiviewcontroller/1621435-supportedinterfaceorientations) property.
