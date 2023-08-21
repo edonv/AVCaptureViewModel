@@ -30,8 +30,6 @@ extension AVCaptureViewModel: AVCaptureFileOutputRecordingDelegate {
 //        recordButton.isEnabled = false
 //        captureModeControl.isEnabled = false
         
-        // This disables device rotation while video is being captured.
-        
         // This is to force update changes to orientation (from switch above)
         // Might not actually use this
         // TODO: how to do this before 16? and how to do this from SwiftUI?
