@@ -11,7 +11,7 @@ import AVFoundation
 /// A SwiftUI `UIViewRepresentable` wrapper of ``CameraPreviewView``.
 /// > Important: Even when there is empty space around the preview, it's part of the view. It's transparent, so you can set a background color, but it will still register taps and gestures on the empty space.
 public struct CameraPreview: UIViewRepresentable {
-    /// The view preview `CALayer` from ``CameraPreviewView/videoPreviewLayer``, that is shared with ``AVCaptureViewModel/AVCaptureViewModel/videoPreviewLayer``.
+    /// The view preview `CALayer` from ``CameraPreviewView``'s ``CameraPreviewView/videoPreviewLayer``, that is shared with ``AVCaptureViewModel/AVCaptureViewModel``'s ``AVCaptureViewModel/AVCaptureViewModel/videoPreviewLayer``.
     @Binding public var videoPreviewLayer: AVCaptureVideoPreviewLayer!
     
     /// The preview layer's capture session from ``AVCaptureViewModel/AVCaptureViewModel/session`` that is passed to ``CameraPreviewView``.
