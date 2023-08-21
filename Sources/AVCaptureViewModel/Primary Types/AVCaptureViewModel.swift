@@ -418,6 +418,9 @@ public class AVCaptureViewModel: NSObject, ObservableObject {
 //    @available(iOS 17.0, *)
 //    internal var videoDeviceRotationCoordinator: AVCaptureDevice.RotationCoordinator!
     
+    /// The device's current orientation.
+    ///
+    /// This updated automatically and can be subscribed to.
     @Published public var currentDeviceOrientation: UIDeviceOrientation = .unknown
     internal var captureOrientation: AVCaptureVideoOrientation {
         switch currentDeviceOrientation {
